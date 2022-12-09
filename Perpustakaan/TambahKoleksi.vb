@@ -4,6 +4,8 @@ Imports System.IO
 
 Public Class TambahKoleksi
 
+    Dim max_char_deskripsi = 268
+    Dim panjang_karakter = max_char_deskripsi
     Public Sub New()
 
         ' This call is required by the designer.
@@ -57,10 +59,20 @@ Public Class TambahKoleksi
             PicFoto.SizeMode = PictureBoxSizeMode.StretchImage
             Perpustakaan.dataPerpustakaan.GSFoto = picKoleksiDir.ToString()
             Perpustakaan.dataPerpustakaan.GSFoto = Perpustakaan.dataPerpustakaan.GSFoto.Replace("\", "/")
-            LblDirGambar.Text = Perpustakaan.dataPerpustakaan.GSFoto
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub RichDeskripsi_KeyPress(sender As Object, e As KeyPressEventArgs) Handles RichDeskripsi.KeyPress
+        LblValueDeskripsi.Text = max_char_deskripsi - RichDeskripsi.Text.Length
+
+        If RichDeskripsi.Text.Length >= max_char_deskripsi Then
+            If e.KeyChar <> ControlChars.Back Then
+                e.Handled = True
+                MessageBox.Show("Max Length")
+            End If
+        End If
     End Sub
 
     Private Sub BtnTambahKoleksi_Click(sender As Object, e As EventArgs) Handles BtnTambahKoleksi.Click
@@ -75,7 +87,8 @@ Public Class TambahKoleksi
         Perpustakaan.dataPerpustakaan.GSTanggalMasukKoleksi = DateTimePickerMasuk.Value.ToLongDateString
         Perpustakaan.dataPerpustakaan.GSStock = TxtStok.Text
 
-        InfoKoleksi.ListBoxKoleksi.Items.Clear()
+        'InfoKoleksi.ListBoxKoleksi.Items.Clear()
+        Perpustakaan.dataPerpustakaan.resetKategori()
 
         If ChckSains.Checked() Then
             Perpustakaan.dataPerpustakaan.AddKategori("Sains")
@@ -93,13 +106,11 @@ Public Class TambahKoleksi
             Perpustakaan.dataPerpustakaan.AddKategori("Budaya")
         End If
 
-        ''Transfer foto ke form info tambah koleksi
-
         ''Menampilkan judul buku yang ditambahkan ke list box
         Dim add_item = TxtNama.Text
         Perpustakaan.listKoleksi.Add(add_item)
 
-        Dim convertedKoleksi = Perpustakaan.dataPerpustakaan.ConvertKoleksiToString(Perpustakaan.dataPerpustakaan.GSKategori)
+        Dim convertedKoleksi = Perpustakaan.dataPerpustakaan.ConvertKoleksiToString(Perpustakaan.dataPerpustakaan.getKategoriItem)
         Perpustakaan.dataPerpustakaan.AddDataKoleksiDatabase(Perpustakaan.dataPerpustakaan.GSFoto,
                                                              Perpustakaan.dataPerpustakaan.GSNama,
                                                              Perpustakaan.dataPerpustakaan.GSJenis,

@@ -2,6 +2,10 @@
 Imports System.Net.Mime.MediaTypeNames
 
 Public Class UpdateKoleksi
+
+    Dim max_char_deskripsi = 268
+    Dim panjang_karakter = max_char_deskripsi
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -47,7 +51,11 @@ Public Class UpdateKoleksi
             End If
 
         Next
-        'FormPerpustakaan.dataPerpustakaan.resetKategori()
+        Perpustakaan.dataPerpustakaan.resetKategori()
+    End Sub
+
+    Private Sub UpdateKoleksi_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        LblValueDeskripsi.Text = Perpustakaan.dataPerpustakaan.getDeskripsiProperty.Length
     End Sub
 
     Private Sub BtnUpdateGambar_Click(sender As Object, e As EventArgs) Handles BtnUpdateGambar.Click
@@ -68,6 +76,17 @@ Public Class UpdateKoleksi
 
     End Sub
 
+    Private Sub RichDeskripsi_KeyPress(sender As Object, e As KeyPressEventArgs) Handles RichDeskripsi.KeyPress
+        LblValueDeskripsi.Text = max_char_deskripsi - RichDeskripsi.Text.Length
+
+        If RichDeskripsi.Text.Length >= max_char_deskripsi Then
+            If e.KeyChar <> ControlChars.Back Then
+                e.Handled = True
+                MessageBox.Show("Max Length")
+            End If
+        End If
+    End Sub
+
     Private Sub BtnUpdateKoleksi_Click(sender As Object, e As EventArgs) Handles BtnUpdateKoleksi.Click
         Perpustakaan.dataPerpustakaan.GSNama = TxtNama.Text.ToString()
         Perpustakaan.dataPerpustakaan.GSJenis = ComboBoxJenis.SelectedItem().ToString()
@@ -80,54 +99,28 @@ Public Class UpdateKoleksi
         Perpustakaan.dataPerpustakaan.GSStock = Integer.Parse(TxtStok.Text)
 
         If RdBIndonesia.Checked = True Then
-            'Perpustakaan.dataPerpustakaan.UpdateDataRdKoleksiByIDDatabase(Perpustakaan.selectedTableKoleksi, "Bahasa Indonesia")
             Perpustakaan.dataPerpustakaan.GSBahasa = "Bahasa Indonesia"
         ElseIf RdBInggris.Checked = True Then
-            'Perpustakaan.dataPerpustakaan.UpdateDataRdKoleksiByIDDatabase(Perpustakaan.selectedTableKoleksi, "Bahasa Inggris")
             Perpustakaan.dataPerpustakaan.GSBahasa = "Bahasa Inggris"
         End If
 
-        InfoKoleksi.ListBoxKoleksi.Items.Clear()
-        Perpustakaan.dataPerpustakaan.resetKategori()
         If ChckSains.Checked = True Then
             Perpustakaan.dataPerpustakaan.AddKategori("Sains")
-            'Perpustakaan.dataPerpustakaan.GSKategori("Sains").ToString()
-
-            'ElseIf ChckSains.Checked = False Then
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("Sains")
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("|")
         End If
 
         If ChckSosial.Checked = True Then
             Perpustakaan.dataPerpustakaan.AddKategori("Sosial")
-            'Perpustakaan.dataPerpustakaan.GSKategori().ToString()
-
-            'ElseIf ChckSosial.Checked = False Then
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("Sosial")
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("|")
         End If
 
         If ChckTeknologi.Checked = True Then
             Perpustakaan.dataPerpustakaan.AddKategori("Teknologi")
-            'Perpustakaan.dataPerpustakaan.GSKategori().ToString()
-
-            'ElseIf ChckTeknologi.Checked = False Then
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("Teknologi")
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("|")
         End If
 
         If ChckBudaya.Checked = True Then
             Perpustakaan.dataPerpustakaan.AddKategori("Budaya")
-            'Perpustakaan.dataPerpustakaan.GSKategori().ToString()
-
-            'ElseIf ChckBudaya.Checked = False Then
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("Budaya")
-            '    Perpustakaan.dataPerpustakaan.GSKategori.Remove("|")
         End If
 
-        'FormPerpustakaan.dataPerpustakaan.GSDeskripsi(TxtNama.Text.ToString())
-
-        Dim convertedKoleksi = Perpustakaan.dataPerpustakaan.ConvertKoleksiToString(Perpustakaan.dataPerpustakaan.GSKategori)
+        Dim convertedKoleksi = Perpustakaan.dataPerpustakaan.ConvertKoleksiToString(Perpustakaan.dataPerpustakaan.getKategoriItem)
 
         Perpustakaan.dataPerpustakaan.UpdateDataKoleksiByIDDatabase(Perpustakaan.selectedTableKoleksi,
                                                                     Perpustakaan.dataPerpustakaan.GSFoto,
@@ -141,8 +134,6 @@ Public Class UpdateKoleksi
                                                                     Perpustakaan.dataPerpustakaan.GSStock,
                                                                     Perpustakaan.dataPerpustakaan.GSBahasa,
                                                                     convertedKoleksi)
-
-        'Perpustakaan.dataPerpustakaan.UpdateDataListKategoriKoleksiByIDDatabase(Perpustakaan.selectedTableKoleksi, convertedKoleksi)
 
         Dim infoTambah = New InfoKoleksi()
         infoTambah.Show()

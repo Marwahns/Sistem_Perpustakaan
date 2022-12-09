@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class InfoKoleksi
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class InfoKoleksi
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InfoKoleksi))
         Me.PicFoto = New System.Windows.Forms.PictureBox()
@@ -46,7 +46,6 @@ Partial Class InfoKoleksi
         Me.LblBahasa = New System.Windows.Forms.Label()
         Me.ListBoxKoleksi = New System.Windows.Forms.ListBox()
         Me.BtnTutup = New System.Windows.Forms.Button()
-        Me.RTBDeskripsi = New System.Windows.Forms.RichTextBox()
         CType(Me.PicFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,7 +87,7 @@ Partial Class InfoKoleksi
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(177, 286)
+        Me.Label4.Location = New System.Drawing.Point(177, 299)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(85, 25)
         Me.Label4.TabIndex = 30
@@ -97,7 +96,7 @@ Partial Class InfoKoleksi
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(177, 329)
+        Me.Label5.Location = New System.Drawing.Point(177, 342)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 25)
         Me.Label5.TabIndex = 31
@@ -106,7 +105,7 @@ Partial Class InfoKoleksi
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(177, 373)
+        Me.Label6.Location = New System.Drawing.Point(177, 386)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(104, 25)
         Me.Label6.TabIndex = 32
@@ -115,7 +114,7 @@ Partial Class InfoKoleksi
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(177, 419)
+        Me.Label7.Location = New System.Drawing.Point(177, 432)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(199, 25)
         Me.Label7.TabIndex = 33
@@ -124,7 +123,7 @@ Partial Class InfoKoleksi
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(177, 463)
+        Me.Label8.Location = New System.Drawing.Point(177, 476)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(64, 25)
         Me.Label8.TabIndex = 34
@@ -133,7 +132,7 @@ Partial Class InfoKoleksi
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(177, 507)
+        Me.Label9.Location = New System.Drawing.Point(177, 520)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(76, 25)
         Me.Label9.TabIndex = 35
@@ -142,7 +141,7 @@ Partial Class InfoKoleksi
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(177, 555)
+        Me.Label10.Location = New System.Drawing.Point(177, 568)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 25)
         Me.Label10.TabIndex = 36
@@ -151,7 +150,7 @@ Partial Class InfoKoleksi
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(177, 603)
+        Me.Label11.Location = New System.Drawing.Point(177, 616)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(0, 25)
         Me.Label11.TabIndex = 37
@@ -160,7 +159,7 @@ Partial Class InfoKoleksi
         '
         Me.LblTanggalMasukKoleksi.AutoSize = True
         Me.LblTanggalMasukKoleksi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblTanggalMasukKoleksi.Location = New System.Drawing.Point(416, 419)
+        Me.LblTanggalMasukKoleksi.Location = New System.Drawing.Point(416, 432)
         Me.LblTanggalMasukKoleksi.Name = "LblTanggalMasukKoleksi"
         Me.LblTanggalMasukKoleksi.Size = New System.Drawing.Size(19, 25)
         Me.LblTanggalMasukKoleksi.TabIndex = 38
@@ -191,6 +190,7 @@ Partial Class InfoKoleksi
         Me.LblDeskripsi.AutoSize = True
         Me.LblDeskripsi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblDeskripsi.Location = New System.Drawing.Point(416, 85)
+        Me.LblDeskripsi.MaximumSize = New System.Drawing.Size(370, 370)
         Me.LblDeskripsi.Name = "LblDeskripsi"
         Me.LblDeskripsi.Size = New System.Drawing.Size(19, 25)
         Me.LblDeskripsi.TabIndex = 41
@@ -200,7 +200,7 @@ Partial Class InfoKoleksi
         '
         Me.LblPenerbit.AutoSize = True
         Me.LblPenerbit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblPenerbit.Location = New System.Drawing.Point(416, 286)
+        Me.LblPenerbit.Location = New System.Drawing.Point(416, 299)
         Me.LblPenerbit.Name = "LblPenerbit"
         Me.LblPenerbit.Size = New System.Drawing.Size(19, 25)
         Me.LblPenerbit.TabIndex = 42
@@ -210,7 +210,7 @@ Partial Class InfoKoleksi
         '
         Me.LblTahunTerbit.AutoSize = True
         Me.LblTahunTerbit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblTahunTerbit.Location = New System.Drawing.Point(416, 329)
+        Me.LblTahunTerbit.Location = New System.Drawing.Point(416, 342)
         Me.LblTahunTerbit.Name = "LblTahunTerbit"
         Me.LblTahunTerbit.Size = New System.Drawing.Size(19, 25)
         Me.LblTahunTerbit.TabIndex = 43
@@ -220,7 +220,7 @@ Partial Class InfoKoleksi
         '
         Me.LblLokasiRak.AutoSize = True
         Me.LblLokasiRak.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblLokasiRak.Location = New System.Drawing.Point(416, 373)
+        Me.LblLokasiRak.Location = New System.Drawing.Point(416, 386)
         Me.LblLokasiRak.Name = "LblLokasiRak"
         Me.LblLokasiRak.Size = New System.Drawing.Size(19, 25)
         Me.LblLokasiRak.TabIndex = 44
@@ -230,7 +230,7 @@ Partial Class InfoKoleksi
         '
         Me.LblStock.AutoSize = True
         Me.LblStock.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblStock.Location = New System.Drawing.Point(416, 463)
+        Me.LblStock.Location = New System.Drawing.Point(416, 476)
         Me.LblStock.Name = "LblStock"
         Me.LblStock.Size = New System.Drawing.Size(19, 25)
         Me.LblStock.TabIndex = 45
@@ -240,7 +240,7 @@ Partial Class InfoKoleksi
         '
         Me.LblBahasa.AutoSize = True
         Me.LblBahasa.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblBahasa.Location = New System.Drawing.Point(416, 507)
+        Me.LblBahasa.Location = New System.Drawing.Point(416, 520)
         Me.LblBahasa.Name = "LblBahasa"
         Me.LblBahasa.Size = New System.Drawing.Size(19, 25)
         Me.LblBahasa.TabIndex = 46
@@ -250,34 +250,30 @@ Partial Class InfoKoleksi
         '
         Me.ListBoxKoleksi.FormattingEnabled = True
         Me.ListBoxKoleksi.ItemHeight = 25
-        Me.ListBoxKoleksi.Location = New System.Drawing.Point(416, 555)
+        Me.ListBoxKoleksi.Location = New System.Drawing.Point(416, 568)
         Me.ListBoxKoleksi.Name = "ListBoxKoleksi"
         Me.ListBoxKoleksi.Size = New System.Drawing.Size(180, 129)
         Me.ListBoxKoleksi.TabIndex = 47
         '
         'BtnTutup
         '
+        Me.BtnTutup.BackColor = System.Drawing.Color.Teal
+        Me.BtnTutup.FlatAppearance.BorderSize = 0
+        Me.BtnTutup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTutup.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnTutup.ForeColor = System.Drawing.Color.White
         Me.BtnTutup.Location = New System.Drawing.Point(358, 740)
         Me.BtnTutup.Name = "BtnTutup"
         Me.BtnTutup.Size = New System.Drawing.Size(112, 34)
         Me.BtnTutup.TabIndex = 48
         Me.BtnTutup.Text = "Tutup"
-        Me.BtnTutup.UseVisualStyleBackColor = True
-        '
-        'RTBDeskripsi
-        '
-        Me.RTBDeskripsi.Location = New System.Drawing.Point(416, 85)
-        Me.RTBDeskripsi.Name = "RTBDeskripsi"
-        Me.RTBDeskripsi.Size = New System.Drawing.Size(372, 183)
-        Me.RTBDeskripsi.TabIndex = 49
-        Me.RTBDeskripsi.Text = ""
+        Me.BtnTutup.UseVisualStyleBackColor = False
         '
         'InfoKoleksi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 787)
-        Me.Controls.Add(Me.RTBDeskripsi)
         Me.Controls.Add(Me.BtnTutup)
         Me.Controls.Add(Me.ListBoxKoleksi)
         Me.Controls.Add(Me.LblBahasa)
@@ -303,6 +299,7 @@ Partial Class InfoKoleksi
         Me.Controls.Add(Me.PicFoto)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "InfoKoleksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "FormInfoTambahKoleksi"
         CType(Me.PicFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -333,5 +330,4 @@ Partial Class InfoKoleksi
     Friend WithEvents LblBahasa As Label
     Friend WithEvents ListBoxKoleksi As ListBox
     Friend WithEvents BtnTutup As Button
-    Friend WithEvents RTBDeskripsi As RichTextBox
 End Class

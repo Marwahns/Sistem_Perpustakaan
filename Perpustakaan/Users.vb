@@ -90,15 +90,19 @@ Public Class Users
         Return s.ToString()
     End Function
 
+    Public Function DBConnection()
+        dbConn.ConnectionString = "server =" + server + ";" _
+                                   + "user id=" + username_db + ";" _
+                                   + "password=" + password_db + ";" _
+                                   + "database =" + database
+    End Function
+
     '' Function Sign Up
     Public Function AddUsersDatabase(username_regist As String, password_regist As String)
         Try
             Dim today = Date.Now()
 
-            dbConn.ConnectionString = "server =" + server + ";" _
-                                   + "user id=" + username_db + ";" _
-                                   + "password=" + password_db + ";" _
-                                   + "database =" + database
+            DBConnection()
 
             dbConn.Open()
 
@@ -123,18 +127,17 @@ Public Class Users
         End Try
     End Function
 
+    '' Function Sign In
     Public Function CheckAuthDatabase(username_login As String, password_login As String) As List(Of String)
         Try
             Dim result As New List(Of String)
 
+            DBConnection()
 
-            dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username_db + ";" + "password=" + password_db + ";" _
-                                      + "database =" + database
             dbConn.Open()
+
             sqlCommand.Connection = dbConn
             queryAuth = "SELECT id_user, username FROM users WHERE username='" & username_login & "' AND password='" & EncryptMD5(password_login) & "'"
-
-
 
             sqlCommand.CommandText = queryAuth
             Debug.WriteLine(queryAuth)

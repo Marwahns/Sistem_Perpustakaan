@@ -15,6 +15,7 @@ Public Class DataPerpustakaan
     Private bahasa As String
 
     Private kategori_list As New List(Of String)
+    Private listKoleksi As New List(Of String)
 
     Private koleksiDataTable As New ArrayList()
 
@@ -68,6 +69,12 @@ Public Class DataPerpustakaan
         Set(ByVal value As String)
             deskripsi = value
         End Set
+    End Property
+
+    Public ReadOnly Property getDeskripsiProperty() As String
+        Get
+            Return deskripsi
+        End Get
     End Property
 
     ' Penerbit
@@ -131,6 +138,7 @@ Public Class DataPerpustakaan
     End Property
 
     ' Kategori
+    '' GSKategori() sudah tidak digunakan
     Public Property GSKategori() As List(Of String)
         Get
             Return kategori_list
@@ -154,6 +162,20 @@ Public Class DataPerpustakaan
     Public Function resetKategori()
         kategori_list.Clear()
     End Function
+
+    Public Function AddKoleksi(value As String)
+        listKoleksi.Add(value)
+    End Function
+
+    Public Function RemoveKoleksi(value As String)
+        listKoleksi.Remove(value)
+    End Function
+
+    Public ReadOnly Property getKoleksiItem() As List(Of String)
+        Get
+            Return listKoleksi
+        End Get
+    End Property
 
     Public Function ConvertKoleksiToString(vals As List(Of String))
         Dim builder As StringBuilder = New StringBuilder()
@@ -197,6 +219,7 @@ Public Class DataPerpustakaan
                              bahasa_koleksi})
     End Function
 
+    '' Function untuk hapus data table tidak pakai database
     Public Function RemoveKoleksiDataTable(index As Integer)
         koleksiDataTable.RemoveAt(index)
     End Function
@@ -215,6 +238,7 @@ Public Class DataPerpustakaan
                                    + "database =" + database
     End Function
 
+    '' Function untuk mengambil data koleksi database
     Public Function GetDataKoleksiDatabase() As DataTable
         Dim result As New DataTable
 
@@ -249,6 +273,8 @@ Public Class DataPerpustakaan
         End Try
     End Function
 
+
+    '' Function untuk data koleksi database
     Public Function AddDataKoleksiDatabase(dir_gambar As String,
                                            nama_koleksi As String,
                                            jenis_koleksi As String,
@@ -268,22 +294,6 @@ Public Class DataPerpustakaan
             dbConn.Open()
             sqlCommand.Connection = dbConn
 
-            'Dim query_tambah As String = "INSERT INTO KOLEKSI(nama_koleksi, dir_gambar, 
-            '            deskripsi, penerbit, jenis_koleksi, 
-            '            tahun_terbit, lokasi, tanggal_masuk_koleksi,
-            '            stock, bahasa, kategori) VALUE('" _
-            '            & nama_koleksi & "', '" _
-            '            & dir_gambar & "', '" _
-            '            & deskripsi_koleksi & "', '" _
-            '            & penerbit_koleksi & "', '" _
-            '            & jenis_koleksi & "', '" _
-            '            & tahun_terbit & "', '" _
-            '            & lokasi_rak & "', '" _
-            '            & tanggal_masuk.ToString("yyyy/MM/dd") & "', '" _
-            '            & stock_koleksi & "', '" _
-            '            & bahasa_koleksi & "', '" _
-            '            & kategori_koleksi & "')"
-
             sqlQuery = "INSERT INTO KOLEKSI(nama_koleksi, dir_gambar, 
                         deskripsi, penerbit, jenis_koleksi, 
                         tahun_terbit, lokasi, tanggal_masuk_koleksi,
@@ -302,7 +312,7 @@ Public Class DataPerpustakaan
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
-            MessageBox.Show("Tambah Database")
+            MessageBox.Show("Data Added")
             dbConn.Close()
             sqlRead.Close()
         Catch ex As Exception
@@ -312,6 +322,7 @@ Public Class DataPerpustakaan
         End Try
     End Function
 
+    '' Function untuk mengambil data koleksi database berdasarkan id
     Public Function GetDataKoleksiByIDDatabase(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
 
@@ -368,6 +379,7 @@ Public Class DataPerpustakaan
 
     End Function
 
+    '' Function untuk update data koleksi database
     Public Function UpdateDataKoleksiByIDDatabase(ID As Integer,
                                                   dir_gambar As String,
                                                   nama_koleksi As String,
@@ -386,7 +398,6 @@ Public Class DataPerpustakaan
         Try
             DBConnection()
 
-            '' Versi main
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "UPDATE koleksi SET nama_koleksi='" & nama_koleksi & "', " &
@@ -416,50 +427,7 @@ Public Class DataPerpustakaan
 
     End Function
 
-    Public Function UpdateDataRdKoleksiByIDDatabase(ID As Integer, bahasa_koleksi As String)
-        Try
-            DBConnection()
-
-            If dbConn.State = ConnectionState.Open Then
-                dbConn.Close()
-            End If
-
-            dbConn.Open()
-
-            sqlCommand = dbConn.CreateCommand()
-            sqlCommand.CommandType = CommandType.Text
-            sqlCommand.CommandText = "UPDATE koleksi SET bahasa='" & bahasa_koleksi & "' WHERE id_koleksi= " & ID
-
-            sqlCommand.ExecuteNonQuery()
-        Catch ex As Exception
-            Return ex.Message
-        Finally
-            dbConn.Dispose()
-        End Try
-    End Function
-
-    Public Function UpdateDataListKategoriKoleksiByIDDatabase(ID As Integer, kategori_koleksi As String)
-        Try
-            DBConnection()
-
-            If dbConn.State = ConnectionState.Open Then
-                dbConn.Close()
-            End If
-
-            dbConn.Open()
-
-            sqlCommand = dbConn.CreateCommand()
-            sqlCommand.CommandType = CommandType.Text
-            sqlCommand.CommandText = "UPDATE koleksi SET kategori='" & kategori_koleksi & "' WHERE id_koleksi= " & ID
-
-            sqlCommand.ExecuteNonQuery()
-        Catch ex As Exception
-            Return ex.Message
-        Finally
-            dbConn.Dispose()
-        End Try
-    End Function
-
+    '' Function untuk delete data koleksi database
     Public Function DeleteDataKoleksiByIDDatabase(ID As Integer)
 
         DBConnection()

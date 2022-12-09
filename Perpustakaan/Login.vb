@@ -4,6 +4,10 @@ Imports System.Security.Cryptography
 Public Class Login
     Public Shared Perpustakaan As Perpustakaan
     Public Shared users As Users
+
+    Dim max_char_username = 30
+    Dim min_char_username = 6
+    Dim panjang_karakter = max_char_username - min_char_username
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
@@ -40,12 +44,18 @@ Public Class Login
                 users.UsernameProperty = data_user(1)
                 Perpustakaan.Show()
                 Me.Hide()
+
+            ElseIf plainUsername = "" Or plainPassword = "" Then
+                MessageBox.Show("Lengkapi Data")
+
             Else
-                MessageBox.Show("Salah Password")
+                'MessageBox.Show("Salah Password")
+                MessageBox.Show("Username or Password incorrect")
+
             End If
 
         Catch ex As Exception
-
+            MessageBox.Show(ex.ToString())
         End Try
     End Sub
 
@@ -54,4 +64,18 @@ Public Class Login
         form_signUp.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Login_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        TxtUsername.Text = ""
+        TxtPassword.Text = ""
+    End Sub
+
+    Private Sub CheckPassword_CheckedChanged(sender As Object, e As EventArgs) Handles CheckPassword.CheckedChanged
+        If CheckPassword.Checked = True Then
+            TxtPassword.UseSystemPasswordChar = False
+        Else
+            TxtPassword.UseSystemPasswordChar = True
+        End If
+    End Sub
+
 End Class

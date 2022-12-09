@@ -53,6 +53,7 @@ Partial Class UpdateKoleksi
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblValueDeskripsi = New System.Windows.Forms.Label()
         CType(Me.PicFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupKategori.SuspendLayout()
         Me.GroupBahasa.SuspendLayout()
@@ -60,6 +61,7 @@ Partial Class UpdateKoleksi
         '
         'ComboBoxJenis
         '
+        Me.ComboBoxJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxJenis.FormattingEnabled = True
         Me.ComboBoxJenis.Items.AddRange(New Object() {"Buku", "Ensiklopedia", "Majalah", "Publikasi"})
         Me.ComboBoxJenis.Location = New System.Drawing.Point(477, 132)
@@ -78,12 +80,17 @@ Partial Class UpdateKoleksi
         '
         'BtnUpdateKoleksi
         '
-        Me.BtnUpdateKoleksi.Location = New System.Drawing.Point(341, 957)
+        Me.BtnUpdateKoleksi.BackColor = System.Drawing.Color.Teal
+        Me.BtnUpdateKoleksi.FlatAppearance.BorderSize = 0
+        Me.BtnUpdateKoleksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUpdateKoleksi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnUpdateKoleksi.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateKoleksi.Location = New System.Drawing.Point(337, 960)
         Me.BtnUpdateKoleksi.Name = "BtnUpdateKoleksi"
         Me.BtnUpdateKoleksi.Size = New System.Drawing.Size(189, 34)
         Me.BtnUpdateKoleksi.TabIndex = 48
         Me.BtnUpdateKoleksi.Text = "Update Koleksi"
-        Me.BtnUpdateKoleksi.UseVisualStyleBackColor = True
+        Me.BtnUpdateKoleksi.UseVisualStyleBackColor = False
         '
         'ChckBudaya
         '
@@ -290,12 +297,17 @@ Partial Class UpdateKoleksi
         '
         'BtnUpdateGambar
         '
+        Me.BtnUpdateGambar.BackColor = System.Drawing.Color.Teal
+        Me.BtnUpdateGambar.FlatAppearance.BorderSize = 0
+        Me.BtnUpdateGambar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUpdateGambar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnUpdateGambar.ForeColor = System.Drawing.Color.White
         Me.BtnUpdateGambar.Location = New System.Drawing.Point(22, 339)
         Me.BtnUpdateGambar.Name = "BtnUpdateGambar"
         Me.BtnUpdateGambar.Size = New System.Drawing.Size(210, 34)
         Me.BtnUpdateGambar.TabIndex = 31
         Me.BtnUpdateGambar.Text = "Tambah Gambar"
-        Me.BtnUpdateGambar.UseVisualStyleBackColor = True
+        Me.BtnUpdateGambar.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -334,11 +346,22 @@ Partial Class UpdateKoleksi
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Update Koleksi"
         '
+        'LblValueDeskripsi
+        '
+        Me.LblValueDeskripsi.AutoSize = True
+        Me.LblValueDeskripsi.Location = New System.Drawing.Point(783, 344)
+        Me.LblValueDeskripsi.Name = "LblValueDeskripsi"
+        Me.LblValueDeskripsi.Size = New System.Drawing.Size(42, 25)
+        Me.LblValueDeskripsi.TabIndex = 51
+        Me.LblValueDeskripsi.Text = "268"
+        '
         'UpdateKoleksi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 1034)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(839, 1008)
+        Me.Controls.Add(Me.LblValueDeskripsi)
         Me.Controls.Add(Me.ComboBoxJenis)
         Me.Controls.Add(Me.PicFoto)
         Me.Controls.Add(Me.BtnUpdateKoleksi)
@@ -364,6 +387,7 @@ Partial Class UpdateKoleksi
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "UpdateKoleksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "UpdateKoleksi"
         CType(Me.PicFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupKategori.ResumeLayout(False)
@@ -406,4 +430,5 @@ Partial Class UpdateKoleksi
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents LblValueDeskripsi As Label
 End Class

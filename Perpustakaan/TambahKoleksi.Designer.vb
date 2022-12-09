@@ -54,7 +54,7 @@ Partial Class TambahKoleksi
         Me.PicFoto = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ComboBoxJenis = New System.Windows.Forms.ComboBox()
-        Me.LblDirGambar = New System.Windows.Forms.Label()
+        Me.LblValueDeskripsi = New System.Windows.Forms.Label()
         Me.GroupBahasa.SuspendLayout()
         Me.GroupKategori.SuspendLayout()
         CType(Me.PicFoto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,12 +99,17 @@ Partial Class TambahKoleksi
         '
         'BtnTambahGambar
         '
+        Me.BtnTambahGambar.BackColor = System.Drawing.Color.Teal
+        Me.BtnTambahGambar.FlatAppearance.BorderSize = 0
+        Me.BtnTambahGambar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTambahGambar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnTambahGambar.ForeColor = System.Drawing.Color.White
         Me.BtnTambahGambar.Location = New System.Drawing.Point(12, 327)
         Me.BtnTambahGambar.Name = "BtnTambahGambar"
         Me.BtnTambahGambar.Size = New System.Drawing.Size(210, 34)
         Me.BtnTambahGambar.TabIndex = 5
         Me.BtnTambahGambar.Text = "Tambah Gambar"
-        Me.BtnTambahGambar.UseVisualStyleBackColor = True
+        Me.BtnTambahGambar.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -307,12 +312,17 @@ Partial Class TambahKoleksi
         '
         'BtnTambahKoleksi
         '
+        Me.BtnTambahKoleksi.BackColor = System.Drawing.Color.Teal
+        Me.BtnTambahKoleksi.FlatAppearance.BorderSize = 0
+        Me.BtnTambahKoleksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTambahKoleksi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnTambahKoleksi.ForeColor = System.Drawing.Color.White
         Me.BtnTambahKoleksi.Location = New System.Drawing.Point(331, 945)
         Me.BtnTambahKoleksi.Name = "BtnTambahKoleksi"
         Me.BtnTambahKoleksi.Size = New System.Drawing.Size(189, 34)
         Me.BtnTambahKoleksi.TabIndex = 24
         Me.BtnTambahKoleksi.Text = "Tambah Koleksi"
-        Me.BtnTambahKoleksi.UseVisualStyleBackColor = True
+        Me.BtnTambahKoleksi.UseVisualStyleBackColor = False
         '
         'PicFoto
         '
@@ -329,6 +339,7 @@ Partial Class TambahKoleksi
         '
         'ComboBoxJenis
         '
+        Me.ComboBoxJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxJenis.FormattingEnabled = True
         Me.ComboBoxJenis.Items.AddRange(New Object() {"Buku", "Ensiklopedia", "Majalah", "Publikasi"})
         Me.ComboBoxJenis.Location = New System.Drawing.Point(467, 120)
@@ -336,22 +347,23 @@ Partial Class TambahKoleksi
         Me.ComboBoxJenis.Size = New System.Drawing.Size(300, 33)
         Me.ComboBoxJenis.TabIndex = 26
         '
-        'LblDirGambar
+        'LblValueDeskripsi
         '
-        Me.LblDirGambar.AutoSize = True
-        Me.LblDirGambar.Location = New System.Drawing.Point(12, 381)
-        Me.LblDirGambar.Name = "LblDirGambar"
-        Me.LblDirGambar.Size = New System.Drawing.Size(19, 25)
-        Me.LblDirGambar.TabIndex = 27
-        Me.LblDirGambar.Text = "-"
+        Me.LblValueDeskripsi.AutoSize = True
+        Me.LblValueDeskripsi.Location = New System.Drawing.Point(773, 332)
+        Me.LblValueDeskripsi.Name = "LblValueDeskripsi"
+        Me.LblValueDeskripsi.Size = New System.Drawing.Size(42, 25)
+        Me.LblValueDeskripsi.TabIndex = 28
+        Me.LblValueDeskripsi.Text = "268"
         '
         'TambahKoleksi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(801, 739)
-        Me.Controls.Add(Me.LblDirGambar)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(820, 1001)
+        Me.Controls.Add(Me.LblValueDeskripsi)
         Me.Controls.Add(Me.ComboBoxJenis)
         Me.Controls.Add(Me.PicFoto)
         Me.Controls.Add(Me.BtnTambahKoleksi)
@@ -378,6 +390,7 @@ Partial Class TambahKoleksi
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TambahKoleksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "FormTambahKoleksi"
         Me.GroupBahasa.ResumeLayout(False)
         Me.GroupBahasa.PerformLayout()
@@ -420,5 +433,5 @@ Partial Class TambahKoleksi
     Friend WithEvents PicFoto As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents ComboBoxJenis As ComboBox
-    Friend WithEvents LblDirGambar As Label
+    Friend WithEvents LblValueDeskripsi As Label
 End Class

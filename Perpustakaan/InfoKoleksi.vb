@@ -21,8 +21,7 @@ Public Class InfoKoleksi
 
         LblNamaKoleksi.Text = Perpustakaan.dataPerpustakaan.GSNama
         LblJenisKoleksi.Text = Perpustakaan.dataPerpustakaan.GSJenis
-        'LblDeskripsi.Text = Perpustakaan.dataPerpustakaan.GSDeskripsi
-        RTBDeskripsi.Text = Perpustakaan.dataPerpustakaan.GSDeskripsi
+        LblDeskripsi.Text = Perpustakaan.dataPerpustakaan.GSDeskripsi
         LblPenerbit.Text = Perpustakaan.dataPerpustakaan.GSPenerbit
         LblTahunTerbit.Text = Perpustakaan.dataPerpustakaan.GSTahunTerbit
         LblLokasiRak.Text = Perpustakaan.dataPerpustakaan.GSLokasiRak
@@ -30,7 +29,7 @@ Public Class InfoKoleksi
         LblStock.Text = Perpustakaan.dataPerpustakaan.GSStock
         LblBahasa.Text = Perpustakaan.dataPerpustakaan.GSBahasa
 
-        ListBoxKoleksi.Items.Clear()
+        ' ListBoxKoleksi.Items.Clear()
 
         For Each kel In Perpustakaan.dataPerpustakaan.GSKategori
             ListBoxKoleksi.Items.Add(kel)

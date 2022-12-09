@@ -27,8 +27,6 @@ Partial Class Perpustakaan
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.KoleksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TambahKoleksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Pertemuan10ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StrukturArrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KoleksiBuku = New System.Windows.Forms.ListBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -49,7 +47,7 @@ Partial Class Perpustakaan
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KoleksiToolStripMenuItem, Me.Pertemuan10ToolStripMenuItem, Me.LogoutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KoleksiToolStripMenuItem, Me.LogoutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(942, 33)
@@ -68,19 +66,6 @@ Partial Class Perpustakaan
         Me.TambahKoleksiToolStripMenuItem.Name = "TambahKoleksiToolStripMenuItem"
         Me.TambahKoleksiToolStripMenuItem.Size = New System.Drawing.Size(236, 34)
         Me.TambahKoleksiToolStripMenuItem.Text = "Tambah Koleksi"
-        '
-        'Pertemuan10ToolStripMenuItem
-        '
-        Me.Pertemuan10ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StrukturArrayToolStripMenuItem})
-        Me.Pertemuan10ToolStripMenuItem.Name = "Pertemuan10ToolStripMenuItem"
-        Me.Pertemuan10ToolStripMenuItem.Size = New System.Drawing.Size(137, 29)
-        Me.Pertemuan10ToolStripMenuItem.Text = "Pertemuan 10"
-        '
-        'StrukturArrayToolStripMenuItem
-        '
-        Me.StrukturArrayToolStripMenuItem.Name = "StrukturArrayToolStripMenuItem"
-        Me.StrukturArrayToolStripMenuItem.Size = New System.Drawing.Size(282, 34)
-        Me.StrukturArrayToolStripMenuItem.Text = "Array dan Collections"
         '
         'LogoutToolStripMenuItem
         '
@@ -137,36 +122,51 @@ Partial Class Perpustakaan
         '
         'BtnRemove
         '
+        Me.BtnRemove.BackColor = System.Drawing.Color.Teal
+        Me.BtnRemove.FlatAppearance.BorderSize = 0
+        Me.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRemove.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnRemove.ForeColor = System.Drawing.Color.White
         Me.BtnRemove.Location = New System.Drawing.Point(817, 515)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(112, 34)
         Me.BtnRemove.TabIndex = 6
         Me.BtnRemove.Text = "Remove"
-        Me.BtnRemove.UseVisualStyleBackColor = True
+        Me.BtnRemove.UseVisualStyleBackColor = False
         '
         'BtnSelect
         '
+        Me.BtnSelect.BackColor = System.Drawing.Color.Teal
+        Me.BtnSelect.FlatAppearance.BorderSize = 0
+        Me.BtnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelect.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnSelect.ForeColor = System.Drawing.Color.White
         Me.BtnSelect.Location = New System.Drawing.Point(699, 515)
         Me.BtnSelect.Name = "BtnSelect"
         Me.BtnSelect.Size = New System.Drawing.Size(112, 34)
         Me.BtnSelect.TabIndex = 7
         Me.BtnSelect.Text = "Select"
-        Me.BtnSelect.UseVisualStyleBackColor = True
+        Me.BtnSelect.UseVisualStyleBackColor = False
         '
         'BtnUpdate
         '
+        Me.BtnUpdate.BackColor = System.Drawing.Color.Teal
+        Me.BtnUpdate.FlatAppearance.BorderSize = 0
+        Me.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUpdate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnUpdate.ForeColor = System.Drawing.Color.White
         Me.BtnUpdate.Location = New System.Drawing.Point(581, 515)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.Size = New System.Drawing.Size(112, 34)
         Me.BtnUpdate.TabIndex = 8
         Me.BtnUpdate.Text = "Update"
-        Me.BtnUpdate.UseVisualStyleBackColor = True
+        Me.BtnUpdate.UseVisualStyleBackColor = False
         '
         'LblDate
         '
         Me.LblDate.AutoSize = True
         Me.LblDate.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LblDate.Location = New System.Drawing.Point(597, 61)
+        Me.LblDate.Location = New System.Drawing.Point(597, 66)
         Me.LblDate.Name = "LblDate"
         Me.LblDate.Size = New System.Drawing.Size(58, 30)
         Me.LblDate.TabIndex = 9
@@ -189,6 +189,7 @@ Partial Class Perpustakaan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(942, 569)
         Me.Controls.Add(Me.LblTime)
         Me.Controls.Add(Me.LblDate)
@@ -202,6 +203,7 @@ Partial Class Perpustakaan
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Perpustakaan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -220,8 +222,6 @@ Partial Class Perpustakaan
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents BtnTambah As ToolStripButton
     Friend WithEvents BtnKurang As ToolStripButton
-    Friend WithEvents Pertemuan10ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents StrukturArrayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridKoleksi As DataGridView
     Friend WithEvents BtnRemove As Button
     Friend WithEvents BtnSelect As Button

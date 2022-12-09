@@ -53,8 +53,8 @@ Public Class Perpustakaan
 
         KoleksiBuku.Items.Clear()
 
-        For Each kel In listKoleksi
-            KoleksiBuku.Items.Add(kel)
+        For Each koll In dataPerpustakaan.getKoleksiItem
+            KoleksiBuku.Items.Add(koll)
         Next
 
     End Sub
@@ -116,60 +116,88 @@ Public Class Perpustakaan
 
     End Sub
 
-    Private Sub StrukturArrayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StrukturArrayToolStripMenuItem.Click
-        Dim form_ArrayAndCollection = New ArrayAndCollection()
-        form_ArrayAndCollection.Show()
-    End Sub
-
     Private Sub BtnSelect_Click(sender As Object, e As EventArgs) Handles BtnSelect.Click
-        Dim selectedKoleksi As List(Of String) = dataPerpustakaan.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+        Try
+            Dim selectedKoleksi As List(Of String) = dataPerpustakaan.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
-        dataPerpustakaan.GSFoto = selectedKoleksi(2)
+            dataPerpustakaan.GSFoto = selectedKoleksi(2)
 
-        dataPerpustakaan.GSNama = selectedKoleksi(1)
-        dataPerpustakaan.GSJenis = selectedKoleksi(5)
-        dataPerpustakaan.GSDeskripsi = selectedKoleksi(3)
-        dataPerpustakaan.GSPenerbit = selectedKoleksi(4)
-        dataPerpustakaan.GSTahunTerbit = selectedKoleksi(6)
-        dataPerpustakaan.GSLokasiRak = selectedKoleksi(7)
-        dataPerpustakaan.GSTanggalMasukKoleksi = selectedKoleksi(8)
-        dataPerpustakaan.GSStock = selectedKoleksi(9)
-        dataPerpustakaan.GSBahasa = selectedKoleksi(10)
-        dataPerpustakaan.GSKategori = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
+            dataPerpustakaan.GSNama = selectedKoleksi(1)
+            dataPerpustakaan.GSJenis = selectedKoleksi(5)
+            dataPerpustakaan.GSDeskripsi = selectedKoleksi(3)
+            dataPerpustakaan.GSPenerbit = selectedKoleksi(4)
+            dataPerpustakaan.GSTahunTerbit = selectedKoleksi(6)
+            dataPerpustakaan.GSLokasiRak = selectedKoleksi(7)
+            dataPerpustakaan.GSTanggalMasukKoleksi = selectedKoleksi(8)
+            dataPerpustakaan.GSStock = selectedKoleksi(9)
+            dataPerpustakaan.GSBahasa = selectedKoleksi(10)
+            dataPerpustakaan.GSKategori = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
 
-        Dim infoTambah = New InfoKoleksi()
-        infoTambah.Show()
+            Dim infoTambah = New InfoKoleksi()
+            infoTambah.Show()
+        Catch ex As Exception
+            MessageBox.Show("Please select data")
+        End Try
+
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
-        Dim selectedKoleksi As List(Of String) = dataPerpustakaan.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+        Try
+            Dim selectedKoleksi As List(Of String) = dataPerpustakaan.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
-        dataPerpustakaan.GSFoto = selectedKoleksi(2)
+            dataPerpustakaan.GSFoto = selectedKoleksi(2)
 
-        dataPerpustakaan.GSNama = selectedKoleksi(1)
-        dataPerpustakaan.GSJenis = selectedKoleksi(5)
-        dataPerpustakaan.GSDeskripsi = selectedKoleksi(3)
-        dataPerpustakaan.GSPenerbit = selectedKoleksi(4)
-        dataPerpustakaan.GSTahunTerbit = selectedKoleksi(6)
-        dataPerpustakaan.GSLokasiRak = selectedKoleksi(7)
-        dataPerpustakaan.GSTanggalMasukKoleksi = selectedKoleksi(8)
-        dataPerpustakaan.GSStock = selectedKoleksi(9)
-        dataPerpustakaan.GSBahasa = selectedKoleksi(10)
-        'Dim data_kategori As List(Of String) = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
-        dataPerpustakaan.GSKategori = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
+            dataPerpustakaan.GSNama = selectedKoleksi(1)
+            dataPerpustakaan.GSJenis = selectedKoleksi(5)
+            dataPerpustakaan.GSDeskripsi = selectedKoleksi(3)
+            dataPerpustakaan.GSPenerbit = selectedKoleksi(4)
+            dataPerpustakaan.GSTahunTerbit = selectedKoleksi(6)
+            dataPerpustakaan.GSLokasiRak = selectedKoleksi(7)
+            dataPerpustakaan.GSTanggalMasukKoleksi = selectedKoleksi(8)
+            dataPerpustakaan.GSStock = selectedKoleksi(9)
+            dataPerpustakaan.GSBahasa = selectedKoleksi(10)
+            'Dim data_kategori As List(Of String) = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
+            dataPerpustakaan.GSKategori = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
 
-        Dim formUpdate = New UpdateKoleksi()
-        formUpdate.Show()
+            Dim formUpdate = New UpdateKoleksi()
+            formUpdate.Show()
+        Catch ex As Exception
+            MessageBox.Show("Please Select Data")
+        End Try
+
     End Sub
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
-        Dim formHapus = New HapusKoleksi()
-        formHapus.Show()
+        Try
+            Dim selectedKoleksi As List(Of String) = dataPerpustakaan.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+
+            dataPerpustakaan.GSFoto = selectedKoleksi(2)
+
+            dataPerpustakaan.GSNama = selectedKoleksi(1)
+            dataPerpustakaan.GSJenis = selectedKoleksi(5)
+            dataPerpustakaan.GSDeskripsi = selectedKoleksi(3)
+            dataPerpustakaan.GSPenerbit = selectedKoleksi(4)
+            dataPerpustakaan.GSTahunTerbit = selectedKoleksi(6)
+            dataPerpustakaan.GSLokasiRak = selectedKoleksi(7)
+            dataPerpustakaan.GSTanggalMasukKoleksi = selectedKoleksi(8)
+            dataPerpustakaan.GSStock = selectedKoleksi(9)
+            dataPerpustakaan.GSBahasa = selectedKoleksi(10)
+            'Dim data_kategori As List(Of String) = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
+            dataPerpustakaan.GSKategori = dataPerpustakaan.ConvertStringToKoleksi(selectedKoleksi(11))
+
+            Dim formHapus = New HapusKoleksi()
+            formHapus.Show()
+        Catch ex As Exception
+            MessageBox.Show("Please Select Data")
+        End Try
+
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
-        Me.Hide()
+        Dim form_login = New Login()
         Login.Show()
+
+        Me.Close()
     End Sub
 
     Private Sub Perpustakaan_Load(sender As Object, e As EventArgs) Handles Me.Load

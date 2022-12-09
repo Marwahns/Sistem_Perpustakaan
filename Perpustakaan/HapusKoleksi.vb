@@ -15,9 +15,14 @@ Public Class HapusKoleksi
     End Sub
 
     Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
-        'Perpustakaan.listKoleksi.Remove(Perpustakaan.koleksiTerpilih)
-        Perpustakaan.dataPerpustakaan.DeleteDataKoleksiByIDDatabase(Perpustakaan.selectedTableKoleksi)
-        Me.Close()
+        Try
+            'Perpustakaan.listKoleksi.Remove(Perpustakaan.koleksiTerpilih)
+            Perpustakaan.dataPerpustakaan.DeleteDataKoleksiByIDDatabase(Perpustakaan.selectedTableKoleksi)
+            Me.Close()
+        Catch ex As Exception
+            MessageBox.Show("Select Data")
+        End Try
+
     End Sub
 
 End Class

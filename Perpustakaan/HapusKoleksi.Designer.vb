@@ -49,12 +49,17 @@ Partial Class HapusKoleksi
         '
         'BtnHapus
         '
+        Me.BtnHapus.BackColor = System.Drawing.Color.Teal
+        Me.BtnHapus.FlatAppearance.BorderSize = 0
+        Me.BtnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnHapus.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnHapus.ForeColor = System.Drawing.Color.White
         Me.BtnHapus.Location = New System.Drawing.Point(332, 367)
         Me.BtnHapus.Name = "BtnHapus"
         Me.BtnHapus.Size = New System.Drawing.Size(112, 34)
         Me.BtnHapus.TabIndex = 2
         Me.BtnHapus.Text = "Hapus"
-        Me.BtnHapus.UseVisualStyleBackColor = True
+        Me.BtnHapus.UseVisualStyleBackColor = False
         '
         'HapusKoleksi
         '
@@ -66,6 +71,7 @@ Partial Class HapusKoleksi
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "HapusKoleksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormHapusKoleksi"
         Me.ResumeLayout(False)
         Me.PerformLayout()

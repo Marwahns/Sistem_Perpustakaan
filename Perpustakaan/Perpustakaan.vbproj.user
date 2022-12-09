@@ -19,9 +19,6 @@
     <Compile Update="Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ArrayAndCollection.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="UpdateKoleksi.vb">
       <SubType>Form</SubType>
     </Compile>
